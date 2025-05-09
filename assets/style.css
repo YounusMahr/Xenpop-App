@@ -34,6 +34,19 @@ body {
     background: radial-gradient(circle at center, #0d192a, #000000);
     color: white;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container.mb-3 {
+    position: relative;
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 /* Logo */
@@ -205,6 +218,35 @@ body {
 
     .header-span {
         display: none !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .xenpop-wrapper {
+        justify-content: flex-start;
+    }
+    .container.mb-3 {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .xenpop-wrapper {
+        display: block;
+        min-height: unset;
+    }
+    .container.mb-3 {
+        display: block;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container.mb-3 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
     }
 }
 
@@ -1343,23 +1385,6 @@ textarea.form-control {
 
 /* // -----------  Footer - section  ------------------ */
 
-/* Main Styles */
-/* body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: white;
-}
-
-.xenpop-wrapper {
-    min-height: 100vh;
-    background: radial-gradient(circle at center, #0d192a, #000000);
-    color: white;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-} */
 
 /* Footer Styles */
 .footer {
