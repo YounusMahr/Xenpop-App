@@ -44,9 +44,6 @@ body {
     padding-bottom: 3rem;
     padding-top: 3rem;
     flex: 1 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 /* Logo */
@@ -237,7 +234,6 @@ body {
         min-height: unset;
     }
     .container.mb-3 {
-        display: block;
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
     }
