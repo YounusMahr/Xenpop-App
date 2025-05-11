@@ -1,8 +1,7 @@
 // -----------  hero section  ------------------
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Orbit Animation
-    initOrbitAnimation();
+   
     
     // Line Chart
     initLineChart();
@@ -14,81 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMarketChart();
 });
 
-function initOrbitAnimation() {
-    const canvas = document.getElementById('orbitCanvas');
-    const ctx = canvas.getContext('2d');
-    
-    // SVG as data URL
-    const svgString = `<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><g clip-path='url(#clip0_441_825)'><path d='M20.4851 20.4853C25.1714 15.799 25.1714 8.20101 20.4851 3.51472C15.7988 -1.17157 8.20087 -1.17157 3.51458 3.51472C-1.17171 8.20101 -1.17171 15.799 3.51458 20.4853C8.20087 25.1716 15.7988 25.1716 20.4851 20.4853Z' fill='url(%23paint0_linear_441_825)'/><path d='M19.7958 19.7959C24.1013 15.4903 24.1013 8.50966 19.7958 4.2041C15.4902 -0.101454 8.50953 -0.101454 4.20398 4.2041C-0.101576 8.50966 -0.101576 15.4903 4.20398 19.7959C8.50953 24.1015 15.4902 24.1015 19.7958 19.7959Z' fill='url(%23paint1_linear_441_825)'/><path opacity='0.3' d='M19.4258 19.6598C23.571 15.5146 23.571 8.79396 19.4258 4.64878C15.2807 0.503601 8.56 0.503603 4.41482 4.64878C0.269634 8.79396 0.269634 15.5146 4.41482 19.6598C8.56 23.805 15.2807 23.805 19.4258 19.6598Z' fill='#FFE482'/><path d='M19.5054 19.5055C23.6506 15.3603 23.6506 8.63967 19.5054 4.49449C15.3603 0.349306 8.63959 0.349306 4.49441 4.49449C0.349225 8.63967 0.349225 15.3603 4.49441 19.5055C8.63959 23.6507 15.3603 23.6507 19.5054 19.5055Z' fill='url(%23paint2_linear_441_825)'/><path opacity='0.4' d='M12.2464 1.6549C18.1035 1.89863 22.6539 6.84476 22.4096 12.7018C22.32 14.8506 21.5931 16.8202 20.4256 18.4448C21.7072 16.7722 22.511 14.7072 22.6054 12.4416C22.8496 6.5845 18.2992 1.6389 12.4422 1.39463C8.73389 1.23996 5.39523 3.01063 3.37976 5.8149C5.41176 3.16316 8.65496 1.50503 12.2464 1.6549Z' fill='url(%23paint3_linear_441_825)'/><path opacity='0.3' d='M17.9228 18.6728C21.3538 15.2418 21.3538 9.67908 17.9228 6.24809C14.4918 2.8171 8.92911 2.8171 5.49812 6.24809C2.06713 9.67908 2.06713 15.2418 5.49812 18.6728C8.92911 22.1038 14.4918 22.1038 17.9228 18.6728Z' fill='#2E0C00'/><path d='M18.2123 18.2124C21.6433 14.7814 21.6433 9.21863 18.2123 5.78764C14.7813 2.35665 9.21854 2.35665 5.78755 5.78764C2.35656 9.21863 2.35656 14.7814 5.78755 18.2124C9.21854 21.6433 14.7813 21.6433 18.2123 18.2124Z' fill='url(%23paint4_linear_441_825)'/><path d='M20.0965 12.3375C19.9104 16.809 16.1344 20.2831 11.6624 20.097C7.1909 19.9109 3.71676 16.1349 3.9029 11.6628C4.08903 7.19138 7.86503 3.71725 12.337 3.90338C16.8085 4.08952 20.2826 7.86605 20.0965 12.3375Z' fill='url(%23paint5_linear_441_825)'/></g><defs><linearGradient id='paint0_linear_441_825' x1='6.09899' y1='24.2773' x2='16.4803' y2='2.67726' gradientUnits='userSpaceOnUse'><stop stop-color='#FFB859'/><stop offset='0.23' stop-color='#CC5827'/><stop offset='0.67' stop-color='#FFDA6B'/><stop offset='1' stop-color='#FF9421'/></linearGradient><linearGradient id='paint1_linear_441_825' x1='4.18327' y1='21.4917' x2='19.9774' y2='2.31299' gradientUnits='userSpaceOnUse'><stop stop-color='#FFB859'/><stop offset='0.23' stop-color='#CC5827'/><stop offset='0.67' stop-color='#FFDA6B'/><stop offset='1' stop-color='#FF9421'/></linearGradient><linearGradient id='paint2_linear_441_825' x1='7.41745' y1='21.577' x2='17.2014' y2='1.12846' gradientUnits='userSpaceOnUse'><stop offset='0.26' stop-color='#B0381C'/><stop offset='1' stop-color='#FF9421'/></linearGradient><linearGradient id='paint3_linear_441_825' x1='3.37923' y1='9.91516' x2='22.6144' y2='9.91516' gradientUnits='userSpaceOnUse'><stop offset='0.26' stop-color='#B0381C'/><stop offset='1' stop-color='#FF9421'/></linearGradient><linearGradient id='paint4_linear_441_825' x1='10.4702' y1='17.6469' x2='14.2654' y2='3.63726' gradientUnits='userSpaceOnUse'><stop stop-color='#FFB859'/><stop offset='0.23' stop-color='#CC5827'/><stop offset='0.67' stop-color='#FFDA6B'/><stop offset='1' stop-color='#FF9421'/></linearGradient><linearGradient id='paint5_linear_441_825' x1='8.5013' y1='19.3119' x2='15.9712' y2='3.70018' gradientUnits='userSpaceOnUse'><stop stop-color='#FFB859'/><stop offset='0.23' stop-color='#CC5827'/><stop offset='0.67' stop-color='#FFDA6B'/><stop offset='1' stop-color='#FF9421'/></linearGradient><clipPath id='clip0_441_825'><rect width='24' height='24' fill='white'/></clipPath></defs></svg>`;
-    const svgUrl = 'data:image/svg+xml;utf8,' + encodeURIComponent(svgString);
-    const svgImg = new window.Image();
-    svgImg.src = svgUrl;
 
-    // Set canvas dimensions
-    function setCanvasDimensions() {
-        const container = canvas.parentElement;
-        canvas.width = container.offsetWidth;
-        canvas.height = container.offsetHeight;
-    }
-    
-    setCanvasDimensions();
-    window.addEventListener('resize', setCanvasDimensions);
-    
-    // Orbital paths and nodes
-    const orbits = [
-        { 
-            radius: canvas.width * 0.25, 
-            speed: 0.0005, 
-            nodes: [{ angle: 0, color: '#3b82f6' }] 
-        },
-        { 
-            radius: canvas.width * 0.35, 
-            speed: 0.0003, 
-            nodes: [{ angle: 2, color: '#f97316' }] 
-        },
-        {
-            radius: canvas.width * 0.45,
-            speed: 0.0002,
-            nodes: [
-                { angle: 1, color: '#3b82f6' },
-                { angle: 4, color: '#f97316' }
-            ]
-        }
-    ];
-    
-    // Animation loop
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        const centerX = canvas.width / 2;
-        const centerY = canvas.height / 2;
-        
-        // Draw orbital paths
-        orbits.forEach(orbit => {
-            ctx.beginPath();
-            ctx.arc(centerX, centerY, orbit.radius, 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(59, 130, 246, 0.2)';
-            ctx.stroke();
-            
-            // Update and draw nodes
-            orbit.nodes.forEach(node => {
-                node.angle += orbit.speed;
-                const x = centerX + Math.cos(node.angle) * orbit.radius;
-                const y = centerY + Math.sin(node.angle) * orbit.radius;
-                // Draw SVG at node position (centered)
-                ctx.save();
-                ctx.translate(x - 12, y - 12); // 12 = half of SVG size (24)
-                ctx.drawImage(svgImg, 0, 0, 24, 24);
-                ctx.restore();
-            });
-        });
-        
-        requestAnimationFrame(animate);
-    }
-    
-    // Wait for SVG image to load before animating
-    svgImg.onload = animate;
-}
 
 function initLineChart() {
     const canvas = document.getElementById('lineChart');
@@ -746,9 +671,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize animations
     initAnimations();
-    
-    // Set up form validation and submission
-    setupFormHandling();
     
     // Add hover effects
     addHoverEffects();

@@ -23,7 +23,7 @@ body {
 
 .header-wrapper{
     min-height: 10vh;
-    background: radial-gradient(circle at center, #0d192a, #000000);
+    background: #121212;
     color: white;
 
 }
@@ -31,7 +31,7 @@ body {
 .xenpop-wrapper {
     min-height: 100vh;
     width: 100%;
-    background: radial-gradient(circle at center, #0d192a, #000000);
+    background: #121212;
     color: white;
     overflow: hidden;
     display: flex;
@@ -114,7 +114,7 @@ body {
 
 /* Chart Container */
 .chart-container {
-    background-color: rgba(37, 99, 235, 0.1);
+    background-color: #121031;
     border-radius: 20px;
     padding: 12px;
     margin-top: 10px;
@@ -321,7 +321,7 @@ body {
 }
 
 .app-card {
-    background: linear-gradient(145deg, #0f2d5e, #071428);
+    background:#121031;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -376,7 +376,7 @@ body {
 
 /* Market Value Section */
 .market-chart-container {
-    background-color: rgba(59, 130, 246, 0.1);
+    background-color: #121031;
     border-radius: 15px;
     padding: 20px;
     position: relative;
