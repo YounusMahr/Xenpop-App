@@ -1330,7 +1330,8 @@ textarea.form-control {
     
     .contact-form-card {
         padding: 60px;
-        margin-right: -140px;
+        margin-left: 100px;
+        margin-right: -160px;
     }
 }
 
