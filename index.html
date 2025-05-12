@@ -136,7 +136,8 @@
           <button class="btn butn down-btn me-2 btn-sm">Download APP</button>
           <span class="header-divider align-middle header-span"
             style="display:inline-block;vertical-align:middle;width:1px;height:20px;position:relative; margin-inline: 8px;"></span>
-          <button class="btn butn cont-btn btn-primary btn-sm" style="background-color: #007bff;"><a href="#contactForm" style="text-decoration: none; color: #fff;">Contact Us</a></button>
+          <button class="btn butn cont-btn btn-primary btn-sm" style="background-color: #007bff;"><a href="#contactForm"
+              style="text-decoration: none; color: #fff;">Contact Us</a></button>
         </div>
       </div>
     </header>
@@ -954,13 +955,12 @@
           </div>
           <!-- --------- center --------- -->
           <div class="nav-indicator">
-            <div>
+            <div class="nav-circle">
               <a href="#download">
-              <svg xmlns="http://www.w3.org/2000/svg"  width="104" height="104" viewBox="0 0 104 104" fill="none">
-                <circle cx="52" cy="52" r="51.5" stroke="white" />
-                <path d="M42 42L52 52L62 42" stroke="white" stroke-linecap="round" />
-                <path d="M42 52L52 62L62 52" stroke="white" stroke-linecap="round" />
-              </svg></a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="104" height="104" viewBox="0 0 104 104" fill="none">
+                  <path d="M42 42L52 52L62 42" stroke="white" stroke-linecap="round" />
+                  <path d="M42 52L52 62L62 52" stroke="white" stroke-linecap="round" />
+                </svg></a>
             </div>
           </div>
           <!-- --------- Right --------- -->
@@ -2613,15 +2613,15 @@
 
             <form id="contactForm">
               <div class="mb-3">
-                <input type="text" class="form-control"  placeholder="Full name" required>
+                <input type="text" class="form-control" id="fullName" placeholder="Full name" required>
               </div>
 
               <div class="mb-3">
-                <input type="text" class="form-control"  placeholder="Number" required>
+                <input type="number" class="form-control" id="value-number" placeholder="+92 383333333" required>
               </div>
 
               <div class="mb-3">
-                <input type="email" class="form-control"  placeholder="Email address" required>
+                <input type="email" class="form-control" id="emailAddress" placeholder="Email address" required>
               </div>
 
               <div class="mb-4">
