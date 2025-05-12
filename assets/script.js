@@ -3,20 +3,19 @@
 document.addEventListener('DOMContentLoaded', function() {
    
     
-    // Line Chart
-    initLineChart();
+
 
     // Initialize App Chart
     initAppChart();
     
-    // Initialize Market Chart
-    initMarketChart();
+
 });
 
+document.querySelectorAll('.lineChart').forEach((canvas, index) => {
+    initLineChart(canvas);
+});
 
-
-function initLineChart() {
-    const canvas = document.getElementById('lineChart');
+function initLineChart(canvas) {
     const ctx = canvas.getContext('2d');
     
     // Set canvas dimensions
@@ -101,6 +100,7 @@ function initLineChart() {
     });
 }
 
+
 // -----------  end hero section  ------------------
 
 // -----------   What is Xenpop-section  ------------------
@@ -154,57 +154,7 @@ function initAppChart() {
     });
 }
 
-function initMarketChart() {
-    const ctx = document.getElementById('marketChart').getContext('2d');
-    
-    // Generate chart data - upward trend with some fluctuations
-    const labels = Array.from({length: 30}, (_, i) => i);
-    const data = generateChartData(30, 40, 70, 0.8);
-    
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Market Value',
-                data: data,
-                borderColor: '#3b82f6',
-                backgroundColor: 'rgba(59, 130, 246, 0.1)',
-                borderWidth: 2,
-                pointRadius: 0,
-                tension: 0.4,
-                fill: true
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    enabled: false
-                }
-            },
-            scales: {
-                x: {
-                    display: false
-                },
-                y: {
-                    display: false,
-                    min: 30,
-                    max: 80
-                }
-            },
-            elements: {
-                line: {
-                    cubicInterpolationMode: 'monotone'
-                }
-            }
-        }
-    });
-}
+
 
 // Helper function to generate chart data with an upward trend and fluctuations
 function generateChartData(points, min, max, volatility) {
@@ -551,33 +501,7 @@ function initAnimations() {
     });
 }
 
-// function addHoverEffects() {
-//     // Add hover effect to footer links
-//     const footerLinks = document.querySelectorAll('.footer-link');
-    
-//     footerLinks.forEach(link => {
-//         link.addEventListener('mouseenter', function() {
-//             this.style.paddingLeft = '5px';
-//         });
-        
-//         link.addEventListener('mouseleave', function() {
-//             this.style.paddingLeft = '0';
-//         });
-//     });
-    
-//     // Add hover effect to social icons
-//     const socialIcons = document.querySelectorAll('.social-icon');
-    
-//     socialIcons.forEach(icon => {
-//         icon.addEventListener('mouseenter', function() {
-//             this.style.transform = 'translateY(-3px) rotate(8deg)';
-//         });
-        
-//         icon.addEventListener('mouseleave', function() {
-//             this.style.transform = 'translateY(0) rotate(0)';
-//         });
-//     });
-// }
+// 
 
 function updateCopyrightYear() {
     // Update copyright year to current year if needed
@@ -769,9 +693,6 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 123, 255, 0.10)`;
         });
         
-        // formCard.addEventListener('mouseleave', function() {
-        //     // Reset to original gradient
-        //     this.style.background = 'linear-gradient(145deg, #0f2d5e, #071428)';
-        // });
+     
     }
 });
